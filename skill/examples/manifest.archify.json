@@ -1,0 +1,44 @@
+{
+  "_说明": "这是给「有源仓库的技能」用的样例 manifest。把这段 source 抄进你要更新的那个技能的 manifest.json 即可启用自动更新。下面这份是 archify（github.com/tt-a1i/archify）的真实配置。",
+
+  "schema": 1,
+  "name": "archify",
+  "display_name": "Archify 架构图生成器",
+  "version": "0.0.0",
+  "entry": null,
+  "self_test": null,
+  "updater": "bin/skillup.py",
+
+  "source": {
+    "type": "github",
+    "repo": "tt-a1i/archify",
+    "ref": "main",
+    "releases": false,
+    "artifact": "archify.zip",
+    "strip_root": true,
+    "auto_update": false,
+    "proxy": null
+  },
+
+  "_字段说明": {
+    "repo": "必填。owner/name。",
+    "ref": "分支或 tag，默认 main。",
+    "releases": "true 时用 /releases/latest 判版本；false 时用最新 commit SHA 判版本。",
+    "version_file": "可选。读仓库里某个文件的首个版本号，如 VERSION.txt。",
+    "artifact": "可选。只下这一个文件，而不是整个仓库压缩包。",
+    "asset_pattern": "可选。配合 releases:true，从 release 资产里按通配挑，如 *.zip。",
+    "package_subdir": "可选。压缩包内只取这个子目录，如 skill。",
+    "strip_root": "默认 true。压缩包若多包一层根目录，自动剥掉。",
+    "auto_update": "true：每日自检时直接装；false：只提示，等你手动跑 update。",
+    "proxy": "可选。如 http://127.0.0.1:7897；不填会按 环境变量 -> 直连 -> 本地 7897 的顺序自动尝试。"
+  },
+
+  "_常用命令": [
+    "python bin/skillup.py status          看当前版本 / 源仓库 / 上次检查",
+    "python bin/skillup.py check --force   忽略 24 小时节流，强制联网查",
+    "python bin/skillup.py update --dry-run 先演一遍，不落盘",
+    "python bin/skillup.py update          备份 + 替换 + 自检，失败自动回滚",
+    "python bin/skillup.py rollback        回滚到最近一次备份",
+    "python bin/skillup.py backups         列出全部备份"
+  ]
+}

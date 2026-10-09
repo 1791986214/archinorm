@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.state/
+*.bak-*/
+*.incoming-*/
+*.broken-*/
+*.replaced-*/
+.DS_Store
+dist/
+repobuild/

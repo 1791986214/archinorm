@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "name": "archinorm",
+  "display_name": "项目框架·归一化框架图构建器",
+  "version": "1.2.0",
+  "released_at": "2026-10-09",
+  "description": "把项目架构写成归一化的分形模块树，并渲染单文件交互式架构图。",
+  "entry": "bin/archinorm.py",
+  "launcher": {
+    "windows": "bin/run.bat",
+    "posix": "bin/run.sh"
+  },
+  "updater": "bin/skillup.py",
+  "self_test": "tests/selftest.py",
+  "requires": {
+    "python": ">=3.9",
+    "third_party": []
+  },
+  "source": {
+    "type": "github",
+    "repo": "1791986214/archinorm",
+    "ref": "main",
+    "releases": false,
+    "version_file": "VERSION",
+    "package_subdir": "skill",
+    "strip_root": true,
+    "auto_update": false,
+    "proxy": null
+  },
+  "upstream": {
+    "repo": "yan-mc/dsh-normify",
+    "license": "MIT",
+    "author": "yan-mc",
+    "note": "本源是 DeepSeek Harness 插件（31 个 normify_* 工具），与本包 CLI 形态不同，不能直接自动更新；本包已吸收其全部规范语义。"
+  },
+  "design_credit": {
+    "repo": "tt-a1i/archify",
+    "license": "MIT",
+    "note": "渲染器的视觉语言（Evidence Console：深色画布 / 全等宽字体 / 七语义色 / 扁平克制）吸收自其 DESIGN.md。"
+  }
+}

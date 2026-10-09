@@ -1,0 +1,237 @@
+[
+  {
+    "path": ".gitattributes",
+    "rel": ".gitattributes",
+    "size": 369
+  },
+  {
+    "path": ".gitignore",
+    "rel": ".gitignore",
+    "size": 103
+  },
+  {
+    "path": "CHANGELOG.md",
+    "rel": "CHANGELOG.md",
+    "size": 8683
+  },
+  {
+    "path": "DESIGN.md",
+    "rel": "DESIGN.md",
+    "size": 9910
+  },
+  {
+    "path": "LICENSE",
+    "rel": "LICENSE",
+    "size": 1256
+  },
+  {
+    "path": "PRODUCT.md",
+    "rel": "PRODUCT.md",
+    "size": 4709
+  },
+  {
+    "path": "README.md",
+    "rel": "README.md",
+    "size": 10513
+  },
+  {
+    "path": "VERSION",
+    "rel": "VERSION",
+    "size": 6
+  },
+  {
+    "path": "docs/demo.gif",
+    "rel": "docs/demo.gif",
+    "size": 353498
+  },
+  {
+    "path": "docs/preview-blueprint.jpg",
+    "rel": "docs/preview-blueprint.jpg",
+    "size": 68597
+  },
+  {
+    "path": "docs/preview-dark.jpg",
+    "rel": "docs/preview-dark.jpg",
+    "size": 55890
+  },
+  {
+    "path": "docs/preview-light.jpg",
+    "rel": "docs/preview-light.jpg",
+    "size": 69481
+  },
+  {
+    "path": "manifest.json",
+    "rel": "manifest.json",
+    "size": 1044
+  },
+  {
+    "path": "package/README-INSTALL.md",
+    "rel": "package/README-INSTALL.md",
+    "size": 9267
+  },
+  {
+    "path": "package/install.bat",
+    "rel": "package/install.bat",
+    "size": 2319
+  },
+  {
+    "path": "package/uninstall.bat",
+    "rel": "package/uninstall.bat",
+    "size": 933
+  },
+  {
+    "path": "package/update.bat",
+    "rel": "package/update.bat",
+    "size": 1188
+  },
+  {
+    "path": "package/update.sh",
+    "rel": "package/update.sh",
+    "size": 905
+  },
+  {
+    "path": "skill/SKILL.md",
+    "rel": "skill/SKILL.md",
+    "size": 12444
+  },
+  {
+    "path": "skill/bin/archinorm.py",
+    "rel": "skill/bin/archinorm.py",
+    "size": 150285
+  },
+  {
+    "path": "skill/bin/build.py",
+    "rel": "skill/bin/build.py",
+    "size": 2456
+  },
+  {
+    "path": "skill/bin/parts/01_p01_head.py",
+    "rel": "skill/bin/parts/01_p01_head.py",
+    "size": 14029
+  },
+  {
+    "path": "skill/bin/parts/02_p02_yaml.py",
+    "rel": "skill/bin/parts/02_p02_yaml.py",
+    "size": 5263
+  },
+  {
+    "path": "skill/bin/parts/03_p03_store.py",
+    "rel": "skill/bin/parts/03_p03_store.py",
+    "size": 6850
+  },
+  {
+    "path": "skill/bin/parts/04_p04_validate.py",
+    "rel": "skill/bin/parts/04_p04_validate.py",
+    "size": 5620
+  },
+  {
+    "path": "skill/bin/parts/05_p05_validate2.py",
+    "rel": "skill/bin/parts/05_p05_validate2.py",
+    "size": 8026
+  },
+  {
+    "path": "skill/bin/parts/06_p06_build.py",
+    "rel": "skill/bin/parts/06_p06_build.py",
+    "size": 3458
+  },
+  {
+    "path": "skill/bin/parts/07_p07_html_head.py",
+    "rel": "skill/bin/parts/07_p07_html_head.py",
+    "size": 9369
+  },
+  {
+    "path": "skill/bin/parts/08_p08_html_tail.py",
+    "rel": "skill/bin/parts/08_p08_html_tail.py",
+    "size": 21431
+  },
+  {
+    "path": "skill/bin/parts/09_p09_changes_policy.py",
+    "rel": "skill/bin/parts/09_p09_changes_policy.py",
+    "size": 5738
+  },
+  {
+    "path": "skill/bin/parts/10_p10_cmd_write.py",
+    "rel": "skill/bin/parts/10_p10_cmd_write.py",
+    "size": 12126
+  },
+  {
+    "path": "skill/bin/parts/11_p11_cmd_build.py",
+    "rel": "skill/bin/parts/11_p11_cmd_build.py",
+    "size": 7458
+  },
+  {
+    "path": "skill/bin/parts/12_p12_cmd_change.py",
+    "rel": "skill/bin/parts/12_p12_cmd_change.py",
+    "size": 12151
+  },
+  {
+    "path": "skill/bin/parts/13_p13_help.py",
+    "rel": "skill/bin/parts/13_p13_help.py",
+    "size": 9943
+  },
+  {
+    "path": "skill/bin/parts/14_p14_cli.py",
+    "rel": "skill/bin/parts/14_p14_cli.py",
+    "size": 11934
+  },
+  {
+    "path": "skill/bin/parts/15_p15_migrate.py",
+    "rel": "skill/bin/parts/15_p15_migrate.py",
+    "size": 16576
+  },
+  {
+    "path": "skill/bin/parts/16_p16_main.py",
+    "rel": "skill/bin/parts/16_p16_main.py",
+    "size": 298
+  },
+  {
+    "path": "skill/bin/run.bat",
+    "rel": "skill/bin/run.bat",
+    "size": 1097
+  },
+  {
+    "path": "skill/bin/run.sh",
+    "rel": "skill/bin/run.sh",
+    "size": 742
+  },
+  {
+    "path": "skill/bin/skillup.py",
+    "rel": "skill/bin/skillup.py",
+    "size": 20093
+  },
+  {
+    "path": "skill/examples/README-AUTO-UPDATE.md",
+    "rel": "skill/examples/README-AUTO-UPDATE.md",
+    "size": 8012
+  },
+  {
+    "path": "skill/examples/manifest.archify.json",
+    "rel": "skill/examples/manifest.archify.json",
+    "size": 2035
+  },
+  {
+    "path": "skill/manifest.json",
+    "rel": "skill/manifest.json",
+    "size": 1261
+  },
+  {
+    "path": "skill/references/SPEC.md",
+    "rel": "skill/references/SPEC.md",
+    "size": 12907
+  },
+  {
+    "path": "skill/tests/selftest.py",
+    "rel": "skill/tests/selftest.py",
+    "size": 20080
+  },
+  {
+    "path": "tools/cdp_record.py",
+    "rel": "tools/cdp_record.py",
+    "size": 5055
+  },
+  {
+    "path": "tools/make_demo_gif.py",
+    "rel": "tools/make_demo_gif.py",
+    "size": 4110
+  }
+]
