@@ -1,3 +1,17 @@
+## 1.3.2 — 2026-10-13
+
+### 渲染层对齐 normify
+- **渲染层换成 normify 引擎**：`render_html()` 优先调用内置的 `lib/normify/render.mjs`（Node），产物与 `normify.html` 视觉/功能完全一致（卡片节点 + 泳道带 + 5 套动效 + 5 种导出 + 动效/配色/导出切换按钮）。
+- **fail-safe 回退**：Node 或引擎不可用时，自动回退到内置 Python 模板，保证任何环境都能出图。
+- 内置 `lib/normify/`：15 个 JS 引擎文件 + `render.mjs` 桥接 + `node_modules`（含 yaml 依赖，1.6M）。
+- `manifest.json` 新增 `render_engine` 段与 `requires.runtime_note`，说明渲染层依赖 Node + yaml、数据层仍纯 Python。
+
+### 验证
+- `bin/build.py` 重合并：43,391 行 / 176,792 B / 106 个顶级定义，单例守卫 OK、CLI 装配 OK
+- `tests/selftest.py`：**73/73 通过**
+- 真浏览器（Playwright + chromium）：品牌 ⬡ Normify、6 边 6 箭头 3 泳道、7 个工具栏按钮、5 套动效/3 套配色、点「大纲」正常、逐帧确认动效在跑、**0 JS 报错**
+- 功能关键词与 `normify.html` 逐项相等（`data-motion` 46/46、`nmExport` 8/8、`nm-signal-scan` 3/3 等）
+
 # 更新日志
 
 ## v1.3.1 — 2026-10-13

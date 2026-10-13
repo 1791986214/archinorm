@@ -1,3 +1,4 @@
+import sys
 
 # --------------------------------------------------------------------------
 # 渲染（二）：图画布 + 面板 + 交互
@@ -1036,11 +1037,70 @@ HTML_TAIL = HTML_ENHANCE_CSS + r"""<script id="payload" type="application/json">
 HTML_TEMPLATE = HTML_HEAD + HTML_TAIL
 
 
+def _normify_engine_dir() -> Path:
+    """normify 渲染引擎所在目录（技能内置）。"""
+    return Path(__file__).resolve().parent.parent / 'lib' / 'normify'
+
+
+def _find_node() -> str:
+    """找一个可用的 node 解释器（含 WorkBuddy 托管版兜底）。"""
+    import os, glob, shutil
+    if os.environ.get('WB_NODE') and Path(os.environ['WB_NODE']).exists():
+        return os.environ['WB_NODE']
+    for name in ('node', 'nodejs'):
+        p = shutil.which(name)
+        if p:
+            return p
+    # WorkBuddy 托管 node（~/.workbuddy/binaries/node/versions/<ver>/bin/node）
+    for p in sorted(glob.glob(str(Path.home() / '.workbuddy' / 'binaries' / 'node' / 'versions' / '*' / 'bin' / 'node')), reverse=True):
+        if Path(p).exists():
+            return p
+    return ''
+
+
 def render_html(tree: dict, out_path: Path) -> Path:
+    """渲染架构图为单文件 HTML。
+
+    优先用 normify 引擎（Node）渲染，产物与项目里的 normify.html 视觉一致；
+    引擎或 Node 不可用时自动回退到内置模板 —— 保证技能在任何环境都可用。
+    """
+    out_path = Path(out_path)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+
+    # —— ① 首选：normify 引擎 ——
+    eng = _normify_engine_dir()
+    renderer = eng / 'render.mjs'
+    node = _find_node()
+    if renderer.exists() and node:
+        import subprocess, tempfile
+        tmp_tree = None
+        try:
+            with tempfile.NamedTemporaryFile('w', suffix='.json', delete=False, encoding='utf-8') as f:
+                json.dump(tree, f, ensure_ascii=False)
+                tmp_tree = f.name
+            title = f"{tree['project']['slug']} · 归一化框架图"
+            proc = subprocess.run(
+                [node, str(renderer), tmp_tree, str(out_path), title],
+                capture_output=True, text=True, timeout=180,
+            )
+            if proc.returncode == 0 and out_path.exists() and out_path.stat().st_size > 20000:
+                return out_path
+            print(f'  ! normify 引擎渲染失败（rc={proc.returncode}），回退内置模板', file=sys.stderr)
+            if proc.stderr:
+                print(f'    {proc.stderr.strip()[:300]}', file=sys.stderr)
+        except Exception as exc:                                   # noqa: BLE001
+            print(f'  ! normify 引擎异常（{type(exc).__name__}: {exc}），回退内置模板', file=sys.stderr)
+        finally:
+            if tmp_tree:
+                try:
+                    Path(tmp_tree).unlink()
+                except OSError:
+                    pass
+
+    # —— ② 回退：内置模板 ——
     payload = json.dumps(tree, ensure_ascii=False).replace("</", "<\\/")
     html = (HTML_TEMPLATE
             .replace("__TITLE__", f"{tree['project']['slug']} · 归一化框架图")
             .replace("__TREE_JSON__", payload))
-    out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(html, encoding="utf-8")
     return out_path
