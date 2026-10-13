@@ -8,3 +8,7 @@ __pycache__/
 .DS_Store
 dist/
 repobuild/
+
+# 内置的 normify 渲染引擎依赖（必须入库，否则技能在新环境无法渲染）
+!skill/lib/normify/node_modules/
+!skill/lib/normify/node_modules/**
