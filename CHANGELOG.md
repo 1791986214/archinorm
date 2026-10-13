@@ -1,5 +1,26 @@
 # 更新日志
 
+## v1.3.1 — 2026-10-13
+
+### 修复：引擎内部版本常量漏改
+
+v1.3.0 升了包版本，但 `parts/01` 里的 `ENGINE_VERSION` 还停在 `"1.2.0"` ——
+渲染出的页面副标题写着「归一化框架图 · archinorm **1.2.0**」，`tree.json` 的 `engine`
+字段也一并写错。**包版本与引擎版本必须成套改**（这正是 v1.3.0 漏掉的一处）。
+
+| 位置 | 之前 | 现在 |
+|---|---|---|
+| `parts/01` `ENGINE_VERSION` | `"1.2.0"` | `"1.3.1"` |
+| 页面副标题（`DATA.engine`） | `archinorm 1.2.0` | `archinorm 1.3.1` |
+| `tree.json` 的 `engine` | `archinorm 1.2.0` | `archinorm 1.3.1` |
+
+页面副标题由 `render` 时按 `ENGINE_VERSION` 重新取，所以**旧 `tree.json` 不用重建**，
+重跑 `render` 即可刷新。
+
+验收：`tests/selftest.py` 73/73；真浏览器打开渲染页，副标题实测 `归一化框架图 · archinorm 1.3.1`，
+工具栏「动效 / 配色 / 导出」三组在位，0 JS 报错。
+
+
 ## v1.3.0 — 2026-10-13
 
 ### 渲染器：动效层 + 五种导出 + 形制/配色预设（与 dsh-normify 视觉对齐）

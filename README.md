@@ -3,7 +3,7 @@
 > 把代码仓库的架构写成**归一化的分形模块树**，渲染成**深色交互式框架图**。
 > 一个 Agent 技能，WorkBuddy / Claude Code / Codex 通用。**零第三方依赖**。
 
-[![version](https://img.shields.io/badge/version-1.3.0-blue.svg)](#)
+[![version](https://img.shields.io/badge/version-1.3.1-blue.svg)](#)
 [![python](https://img.shields.io/badge/python-%3E%3D3.9-blue.svg)](#)
 [![deps](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](#)
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
