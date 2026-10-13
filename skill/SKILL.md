@@ -158,6 +158,29 @@ archinorm-myproj/
 4. **长边提示**：回指/跨图的边写 `edge_hints`，`lane` 2..4 拉开轨道
 5. **不要硬凑分组**：一组平级功能就直接 `grid`
 
+## 5.1 图的外观与交互（v1.3.0 新增）
+
+渲染出的 `architecture.html` 工具栏自带三组下拉，**点按钮**即可切换，也能用 URL 参数复现：
+
+| 入口 | 可选值 | URL 参数 |
+|---|---|---|
+| 主题 | 暗色 / 亮色 / 蓝图 | 按钮切换（写 `html[data-theme]`） |
+| **动效** ▾ | 默认（流动）/ Apple Spring · 弹性 / OpenAI Glow · 光晕 / Apple Depth · 纵深 / Archify 原版 · 错峰流动 / Archify 信号扫描 · 柔光 | `?motion=spring\|glow\|depth\|archify\|scan` |
+| **配色** ▾ | Signal Flow · 青蓝（默认）/ Blueprint · 蓝图 / Ember · 暖橙 | `?preset=signal\|blueprint\|ember` |
+| **导出** ▾ | SVG / PNG / JPEG / WebP / **WebM 动图（6 秒）** | — |
+
+- **动效**：边流动一律挂在 `.edge-flow` 覆盖层（原依赖边语义与选中态不变，
+  且 `display:none` 的元素不跑 CSS 动画，挂原边上会不动）；节点层次用**描边 + 渐变**表达，
+  **不用常驻 SVG 滤镜**（每帧重算滤镜是卡顿主因）。`prefers-reduced-motion: reduce` 下全部关闭。
+- **配色**：纯 CSS 变量、零 JS 分支（`html[data-preset=…]`）。亮色主题 × 配色预设必须用
+  `html[data-theme="light"][data-preset=…]` 单独写一套浅色令牌 —— 否则同为 (0,1,1) 的预设会盖掉亮色主题。
+- **导出**：光栅化前**内联计算样式**（`XMLSerializer` 只序列化 DOM 属性，动画中间态在计算样式里，
+  不内联就导出静态初始态）；WebM 用 `canvas.captureStream()` + `MediaRecorder` **逐帧重绘**，
+  **不需要 ffmpeg**；浏览器不支持录制时该菜单项自动置灰（fail-closed）。
+  自动化可调 `window.nmExport`（`svgString` / `rasterize` / `exportStatic` / `exportWebM` / `webmSupported`）。
+- **深链**：`#module=<id>` 直接进某模块。图**默认打开即画**（不像 dsh-normify 必须带 hash 才渲染）。
+- **展开深度**：默认 **1 层**（当前模块 + 直接子级）；点节点再击/双击下钻。
+
 ## 6. 命令速查（30 个）
 
 | 分组 | 命令 |

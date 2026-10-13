@@ -1,5 +1,57 @@
 # 更新日志
 
+## v1.3.0 — 2026-10-13
+
+### 渲染器：动效层 + 五种导出 + 形制/配色预设（与 dsh-normify 视觉对齐）
+
+此前 archinorm 只吸收了 archify 的 DESIGN.md（配色与字体），**动效层完全没搬**。
+本次把 normify 渲染器里做好的 10 项增强，在 Python 渲染器（`parts/08`）里**重实现一遍**，
+两套渲染器并存、参数可组合。改动集中在 `skill/bin/parts/08_p08_html_tail.py`（+543 行），
+其余文件同步 build 产物与文档。
+
+| 项 | 内容 |
+|---|---|
+| P0 基础动效 | 边流动覆盖层 `.edge-flow` + 节点脉冲 + `prefers-reduced-motion` 全关 |
+| 自研三套动效 | `?motion=spring`（Apple 弹性）/ `glow`（OpenAI 跑光点 + 逐条绘制）/ `depth`（玻璃纵深） |
+| 五种导出 | SVG / PNG / JPEG / WebP / **WebM 6 秒**（`captureStream` + `MediaRecorder` 逐帧重绘，无 ffmpeg） |
+| 形制 | 卡片节点（`rx 13` + `<linearGradient>`）+ 泳道带（标题带 `group-bar` + 左侧色条 `group-rail`） |
+| 三套配色 | `?preset=signal` / `blueprint` / `ember`（纯 CSS 变量，零 JS 分支） |
+| 切换按钮 | 工具栏新增「动效 ▾」「配色 ▾」「导出 ▾」，切换后重绘以重播入场 |
+| archify 原版复刻 | `?motion=archify`：虚线 `10 8` / `dashoffset 54→0` / 1.75s + **`--step` 错峰 ×160ms** + 节点**双峰脉冲**（18%/36%）+ 115° 斜柔光 `.035` |
+| 扫描氛围 | `?motion=scan`：沿用 archify 的 `.canvaswrap::before` 斜向柔光（**透明度忠于原版 .035**，是氛围不是特效） |
+
+### 修复
+
+- **配色预设 × 亮色主题冲突**：`html[data-preset]` 与 `html[data-theme]` 同为 (0,1,1)，
+  增强层样式排在原生 `<style>` 之后 ⇒ 预设会盖掉亮色主题的浅底。
+  补一层 `html[data-theme="light"][data-preset=…]`（(0,2,1)）为每套预设写浅色令牌。
+- **去掉常驻 SVG 滤镜**：层次改用「描边 + 取色」表达，避免每帧重算滤镜导致的卡顿。
+
+### 移植时踩过、已在注释里标注的坑
+
+| 坑 | 规避 |
+|---|---|
+| 边动效挂 `.edge` 上完全不动（`display:none` 的元素不跑 CSS 动画） | 一律挂 `.edge-flow` 覆盖层 |
+| 往无分号风格代码里插 IIFE 被解析成函数调用链 → 整图不渲染 | IIFE **必须带前导分号** `;(function…)()` |
+| `XMLSerializer` 只序列化 DOM 属性，导出的图「没有样式」 | 光栅化前**内联计算样式** |
+| 同一 CSS 锚点反复插补丁 → 后打的排到更前面被旧规则覆盖 | 关键修复用**更高 specificity**，或直接改源头规则 |
+| 本段是 Python 原始字符串 `r"""…"""`，反斜杠**只写一层**（与 JS 模板串相反） | 正则写 `\s` 而不是 `\\s` |
+
+### 验收
+
+- `tests/selftest.py` **73/73**（`bin/build.py` 合并成功、单例守卫与 CLI 装配冒烟通过）
+- **真浏览器验收**（Playwright + chromium）：动效 6 × 配色 3 × 主题 2 = **36 用例全过、0 JS 报错**；
+  五种导出实测出字节（SVG 内联样式 / PNG / JPEG / WebP / WebM 支持）
+- **保留本地补丁**：默认展开深度仍为 **1 层**（`depthLimit = mode === 'all' ? 2 : 1`）
+- 组合参数：`?preset=signal|blueprint|ember` + `?motion=spring|glow|depth|archify|scan` + `#module=<id>`
+
+### 已知差距
+
+- 本渲染器**不做依赖边聚合**（`dsh-normify` 的 `agg` 概念在此不存在）：依赖边只在
+  「两端都在当前视图内」时绘制，所以根视图可能没有彩色依赖边（只有结构边）——这是既有行为，非本次回归。
+- `docs/preview-*.jpg` 与 `docs/demo.gif` 仍是 v1.2.0 时期的截图，未随本次外观变更重录。
+
+
 ## v1.2.0 — 2026-10-09
 
 ### 修复：渲染器此前**完全没读** `renders/` 数据

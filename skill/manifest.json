@@ -2,8 +2,8 @@
   "schema": 1,
   "name": "archinorm",
   "display_name": "项目框架·归一化框架图构建器",
-  "version": "1.2.0",
-  "released_at": "2026-10-09",
+  "version": "1.3.0",
+  "released_at": "2026-10-13",
   "description": "把项目架构写成归一化的分形模块树，并渲染单文件交互式架构图。",
   "entry": "bin/archinorm.py",
   "launcher": {

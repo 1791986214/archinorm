@@ -3,7 +3,7 @@
 > 把代码仓库的架构写成**归一化的分形模块树**，渲染成**深色交互式框架图**。
 > 一个 Agent 技能，WorkBuddy / Claude Code / Codex 通用。**零第三方依赖**。
 
-[![version](https://img.shields.io/badge/version-1.2.0-blue.svg)](#)
+[![version](https://img.shields.io/badge/version-1.3.0-blue.svg)](#)
 [![python](https://img.shields.io/badge/python-%3E%3D3.9-blue.svg)](#)
 [![deps](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](#)
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -78,7 +78,8 @@ python bin/archinorm.py migrate   --repo ~/proj/myapp --dir ~/arch --render
 | 阅读导语 | 画布上方一条导语带，来自该层的 `renders/<id>.json` 的 `reading` |
 | 分组框 | 该层 `mode: groups` 时，按 `groups` 画虚线框 + 标题（演示里下钻「前端」可看到「入口 / 交易」） |
 | `#module=<id>` | 深链直开某个模块 |
-| 顶部三钮 | 暗色 / 亮色 / 蓝图；当前层 / 全图 / 复位 |
+| 顶部左组 | 暗色 / 亮色 / 蓝图（主题）；当前层 / 全图 / 复位 |
+| 顶部右组 | **动效 ▾** / **配色 ▾** / **导出 ▾** 三组下拉（见下节） |
 
 **层怎么画，由 `renders/<id>.json` 决定**：`order` 排阅读顺序（生产者 → 消费者）、
 `reading` 写一句导语、`groups` 划领域边界、`edge_hints` 给单条边定车道。
@@ -100,6 +101,27 @@ OUT    call     数据库       更新订单状态
 | ![暗色](docs/preview-dark.jpg) | ![亮色](docs/preview-light.jpg) | ![蓝图](docs/preview-blueprint.jpg) |
 
 三套主题共享同一套语义色词汇 —— 换的是材质与对比度，不是信息优先级。
+
+## 动效 / 配色 / 导出（v1.3.0）
+
+工具栏右侧三组下拉，点开即用，也能用 URL 参数复现同一状态：
+
+| 入口 | 可选值 | URL 参数 |
+|---|---|---|
+| **动效** ▾ | 默认（流动）/ Apple Spring · 弹性 / OpenAI Glow · 光晕 / Apple Depth · 纵深 / Archify 原版 · 错峰流动 / Archify 信号扫描 · 柔光 | `?motion=spring\|glow\|depth\|archify\|scan` |
+| **配色** ▾ | Signal Flow · 青蓝（默认）/ Blueprint · 蓝图 / Ember · 暖橙 | `?preset=signal\|blueprint\|ember` |
+| **导出** ▾ | SVG / PNG / JPEG / WebP / **WebM 动图（6 秒）** | — |
+
+- **动效**：边流动挂在 `.edge-flow` 覆盖层（原依赖边的语义与选中态都不动）；节点层次用
+  **描边 + 渐变**表达，**不挂常驻 SVG 滤镜**（每帧重算滤镜是卡顿主因）。
+  `prefers-reduced-motion: reduce` 下全部关闭，`archify` 预设有 `--step` 错峰与双峰脉冲。
+- **配色**：纯 CSS 变量、零 JS 分支；亮色主题 × 配色预设用
+  `html[data-theme="light"][data-preset=…]` 单独写一套浅色令牌。
+- **导出**：光栅化前**内联计算样式**（动画中间态在计算样式里，不内联就只导出初始态）；
+  WebM 用 `canvas.captureStream()` + `MediaRecorder` 逐帧重绘，**不需要 ffmpeg**；
+  浏览器不支持录制时该项自动置灰。自动化可调 `window.nmExport`。
+
+组合起来就是 `?preset=ember&motion=archify#module=workbench.server` 这样一个可分享的链接。
 
 ## 读懂一个真实仓库
 

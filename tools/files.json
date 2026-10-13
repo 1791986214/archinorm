@@ -12,7 +12,7 @@
   {
     "path": "CHANGELOG.md",
     "rel": "CHANGELOG.md",
-    "size": 8683
+    "size": 12358
   },
   {
     "path": "DESIGN.md",
@@ -32,12 +32,12 @@
   {
     "path": "README.md",
     "rel": "README.md",
-    "size": 10513
+    "size": 12136
   },
   {
     "path": "VERSION",
     "rel": "VERSION",
-    "size": 6
+    "size": 5
   },
   {
     "path": "docs/demo.gif",
@@ -92,12 +92,12 @@
   {
     "path": "skill/SKILL.md",
     "rel": "skill/SKILL.md",
-    "size": 12444
+    "size": 14476
   },
   {
     "path": "skill/bin/archinorm.py",
     "rel": "skill/bin/archinorm.py",
-    "size": 150285
+    "size": 174238
   },
   {
     "path": "skill/bin/build.py",
@@ -142,7 +142,7 @@
   {
     "path": "skill/bin/parts/08_p08_html_tail.py",
     "rel": "skill/bin/parts/08_p08_html_tail.py",
-    "size": 21431
+    "size": 45384
   },
   {
     "path": "skill/bin/parts/09_p09_changes_policy.py",
