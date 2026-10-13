@@ -342,7 +342,7 @@ else:
 
 
 SCHEMA_VERSION = 1
-ENGINE_VERSION = "1.3.1"
+ENGINE_VERSION = "1.3.3"
 
 ID_SEG = re.compile(r"^[a-z0-9][a-z0-9-]*$")
 UID_RE = re.compile(r"^[0-9a-f]{8}$")

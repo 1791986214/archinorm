@@ -12,7 +12,7 @@
   {
     "path": "CHANGELOG.md",
     "rel": "CHANGELOG.md",
-    "size": 13322
+    "size": 16377
   },
   {
     "path": "DESIGN.md",
@@ -32,7 +32,7 @@
   {
     "path": "README.md",
     "rel": "README.md",
-    "size": 12136
+    "size": 13542
   },
   {
     "path": "VERSION",
@@ -92,12 +92,12 @@
   {
     "path": "skill/SKILL.md",
     "rel": "skill/SKILL.md",
-    "size": 14476
+    "size": 15832
   },
   {
     "path": "skill/bin/archinorm.py",
     "rel": "skill/bin/archinorm.py",
-    "size": 174238
+    "size": 176792
   },
   {
     "path": "skill/bin/build.py",
@@ -210,9 +210,1264 @@
     "size": 2035
   },
   {
+    "path": "skill/lib/normify/engine/changes.js",
+    "rel": "skill/lib/normify/engine/changes.js",
+    "size": 12354
+  },
+  {
+    "path": "skill/lib/normify/engine/companion.js",
+    "rel": "skill/lib/normify/engine/companion.js",
+    "size": 5725
+  },
+  {
+    "path": "skill/lib/normify/engine/compile.js",
+    "rel": "skill/lib/normify/engine/compile.js",
+    "size": 10325
+  },
+  {
+    "path": "skill/lib/normify/engine/diag.js",
+    "rel": "skill/lib/normify/engine/diag.js",
+    "size": 1130
+  },
+  {
+    "path": "skill/lib/normify/engine/edit.js",
+    "rel": "skill/lib/normify/engine/edit.js",
+    "size": 38605
+  },
+  {
+    "path": "skill/lib/normify/engine/frontmatter.js",
+    "rel": "skill/lib/normify/engine/frontmatter.js",
+    "size": 22363
+  },
+  {
+    "path": "skill/lib/normify/engine/ids.js",
+    "rel": "skill/lib/normify/engine/ids.js",
+    "size": 2982
+  },
+  {
+    "path": "skill/lib/normify/engine/layout.js",
+    "rel": "skill/lib/normify/engine/layout.js",
+    "size": 20116
+  },
+  {
+    "path": "skill/lib/normify/engine/policy.js",
+    "rel": "skill/lib/normify/engine/policy.js",
+    "size": 22835
+  },
+  {
+    "path": "skill/lib/normify/engine/reference.js",
+    "rel": "skill/lib/normify/engine/reference.js",
+    "size": 9424
+  },
+  {
+    "path": "skill/lib/normify/engine/render.js",
+    "rel": "skill/lib/normify/engine/render.js",
+    "size": 2361
+  },
+  {
+    "path": "skill/lib/normify/engine/store.js",
+    "rel": "skill/lib/normify/engine/store.js",
+    "size": 14921
+  },
+  {
+    "path": "skill/lib/normify/engine/template.js",
+    "rel": "skill/lib/normify/engine/template.js",
+    "size": 111081
+  },
+  {
+    "path": "skill/lib/normify/engine/types.js",
+    "rel": "skill/lib/normify/engine/types.js",
+    "size": 1034
+  },
+  {
+    "path": "skill/lib/normify/engine/validate.js",
+    "rel": "skill/lib/normify/engine/validate.js",
+    "size": 18168
+  },
+  {
+    "path": "skill/lib/normify/node_modules/.bin/yaml",
+    "rel": "skill/lib/normify/node_modules/.bin/yaml",
+    "size": 15
+  },
+  {
+    "path": "skill/lib/normify/node_modules/.package-lock.json",
+    "rel": "skill/lib/normify/node_modules/.package-lock.json",
+    "size": 587
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/LICENSE",
+    "rel": "skill/lib/normify/node_modules/yaml/LICENSE",
+    "size": 738
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/README.md",
+    "rel": "skill/lib/normify/node_modules/yaml/README.md",
+    "size": 6266
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/bin.mjs",
+    "rel": "skill/lib/normify/node_modules/yaml/bin.mjs",
+    "size": 310
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/compose/compose-collection.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/compose/compose-collection.js",
+    "size": 3500
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/compose/compose-doc.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/compose/compose-doc.js",
+    "size": 1555
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/compose/compose-node.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/compose/compose-node.js",
+    "size": 4122
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/compose/compose-scalar.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/compose/compose-scalar.js",
+    "size": 3316
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/compose/composer.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/compose/composer.js",
+    "size": 8484
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/compose/resolve-block-map.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/compose/resolve-block-map.js",
+    "size": 4915
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/compose/resolve-block-scalar.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/compose/resolve-block-scalar.js",
+    "size": 7447
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/compose/resolve-block-seq.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/compose/resolve-block-seq.js",
+    "size": 1740
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/compose/resolve-end.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/compose/resolve-end.js",
+    "size": 1239
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/compose/resolve-flow-collection.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/compose/resolve-flow-collection.js",
+    "size": 8778
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/compose/resolve-flow-scalar.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/compose/resolve-flow-scalar.js",
+    "size": 7355
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/compose/resolve-props.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/compose/resolve-props.js",
+    "size": 5552
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/compose/util-contains-newline.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/compose/util-contains-newline.js",
+    "size": 1051
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/compose/util-empty-scalar-position.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/compose/util-empty-scalar-position.js",
+    "size": 816
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/compose/util-flow-indent-check.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/compose/util-flow-indent-check.js",
+    "size": 494
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/compose/util-map-includes.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/compose/util-map-includes.js",
+    "size": 428
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/doc/Document.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/doc/Document.js",
+    "size": 12903
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/doc/anchors.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/doc/anchors.js",
+    "size": 2276
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/doc/applyReviver.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/doc/applyReviver.js",
+    "size": 1923
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/doc/createNode.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/doc/createNode.js",
+    "size": 3061
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/doc/directives.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/doc/directives.js",
+    "size": 6188
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/errors.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/errors.js",
+    "size": 2023
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/index.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/index.js",
+    "size": 879
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/log.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/log.js",
+    "size": 260
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/Alias.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/Alias.js",
+    "size": 3998
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/Collection.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/Collection.js",
+    "size": 5076
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/Node.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/Node.js",
+    "size": 1339
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/Pair.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/Pair.js",
+    "size": 1124
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/Scalar.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/Scalar.js",
+    "size": 700
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/YAMLMap.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/YAMLMap.js",
+    "size": 4957
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/YAMLSeq.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/YAMLSeq.js",
+    "size": 3573
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/addPairToJSMap.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/addPairToJSMap.js",
+    "size": 2289
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/identity.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/identity.js",
+    "size": 1513
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/toJS.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/nodes/toJS.js",
+    "size": 1266
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/parse/cst-scalar.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/parse/cst-scalar.js",
+    "size": 9235
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/parse/cst-stringify.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/parse/cst-stringify.js",
+    "size": 1775
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/parse/cst-visit.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/parse/cst-visit.js",
+    "size": 3966
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/parse/cst.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/parse/cst.js",
+    "size": 2886
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/parse/lexer.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/parse/lexer.js",
+    "size": 24138
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/parse/line-counter.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/parse/line-counter.js",
+    "size": 1419
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/parse/parser.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/parse/parser.js",
+    "size": 35393
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/public-api.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/public-api.js",
+    "size": 3992
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/Schema.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/Schema.js",
+    "size": 1495
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/common/map.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/common/map.js",
+    "size": 439
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/common/null.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/common/null.js",
+    "size": 434
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/common/seq.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/common/seq.js",
+    "size": 440
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/common/string.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/common/string.js",
+    "size": 421
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/core/bool.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/core/bool.js",
+    "size": 607
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/core/float.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/core/float.js",
+    "size": 1399
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/core/int.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/core/int.js",
+    "size": 1324
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/core/schema.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/core/schema.js",
+    "size": 480
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/json/schema.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/json/schema.js",
+    "size": 1867
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/tags.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/tags.js",
+    "size": 2962
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/binary.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/binary.js",
+    "size": 2315
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/bool.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/bool.js",
+    "size": 787
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/float.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/float.js",
+    "size": 1515
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/int.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/int.js",
+    "size": 2132
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/merge.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/merge.js",
+    "size": 2524
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/omap.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/omap.js",
+    "size": 2473
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/pairs.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/pairs.js",
+    "size": 2751
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/schema.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/schema.js",
+    "size": 860
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/set.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/set.js",
+    "size": 3030
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/timestamp.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/schema/yaml-1.1/timestamp.js",
+    "size": 3698
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/stringify/foldFlowLines.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/stringify/foldFlowLines.js",
+    "size": 4794
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/stringify/stringify.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/stringify/stringify.js",
+    "size": 4400
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/stringify/stringifyCollection.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/stringify/stringifyCollection.js",
+    "size": 5552
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/stringify/stringifyComment.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/stringify/stringifyComment.js",
+    "size": 724
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/stringify/stringifyDocument.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/stringify/stringifyDocument.js",
+    "size": 2983
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/stringify/stringifyNumber.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/stringify/stringifyNumber.js",
+    "size": 778
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/stringify/stringifyPair.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/stringify/stringifyPair.js",
+    "size": 5285
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/stringify/stringifyString.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/stringify/stringifyString.js",
+    "size": 13164
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/util.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/util.js",
+    "size": 594
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/dist/visit.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/dist/visit.js",
+    "size": 9107
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/index.js",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/index.js",
+    "size": 191
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/browser/package.json",
+    "rel": "skill/lib/normify/node_modules/yaml/browser/package.json",
+    "size": 23
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/cli.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/cli.d.ts",
+    "size": 1254
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/cli.mjs",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/cli.mjs",
+    "size": 7462
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/compose-collection.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/compose-collection.d.ts",
+    "size": 582
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/compose-collection.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/compose-collection.js",
+    "size": 3613
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/compose-doc.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/compose-doc.d.ts",
+    "size": 623
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/compose-doc.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/compose-doc.js",
+    "size": 1615
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/compose-node.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/compose-node.d.ts",
+    "size": 1225
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/compose-node.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/compose-node.js",
+    "size": 4269
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/compose-scalar.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/compose-scalar.d.ts",
+    "size": 393
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/compose-scalar.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/compose-scalar.js",
+    "size": 3446
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/composer.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/composer.d.ts",
+    "size": 2652
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/composer.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/composer.js",
+    "size": 8692
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-block-map.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-block-map.d.ts",
+    "size": 457
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-block-map.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-block-map.js",
+    "size": 5071
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-block-scalar.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-block-scalar.d.ts",
+    "size": 484
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-block-scalar.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-block-scalar.js",
+    "size": 7500
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-block-seq.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-block-seq.d.ts",
+    "size": 467
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-block-seq.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-block-seq.js",
+    "size": 1812
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-end.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-end.d.ts",
+    "size": 283
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-end.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-end.js",
+    "size": 1264
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-flow-collection.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-flow-collection.d.ts",
+    "size": 636
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-flow-collection.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-flow-collection.js",
+    "size": 8927
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-flow-scalar.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-flow-scalar.d.ts",
+    "size": 437
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-flow-scalar.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-flow-scalar.js",
+    "size": 7417
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-props.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-props.d.ts",
+    "size": 848
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-props.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/resolve-props.js",
+    "size": 5579
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/util-contains-newline.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/util-contains-newline.d.ts",
+    "size": 131
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/util-contains-newline.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/util-contains-newline.js",
+    "size": 1081
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/util-empty-scalar-position.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/util-empty-scalar-position.d.ts",
+    "size": 161
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/util-empty-scalar-position.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/util-empty-scalar-position.js",
+    "size": 850
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/util-flow-indent-check.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/util-flow-indent-check.d.ts",
+    "size": 221
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/util-flow-indent-check.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/util-flow-indent-check.js",
+    "size": 547
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/util-map-includes.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/util-map-includes.d.ts",
+    "size": 260
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/compose/util-map-includes.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/compose/util-map-includes.js",
+    "size": 471
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/doc/Document.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/doc/Document.d.ts",
+    "size": 6540
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/doc/Document.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/doc/Document.js",
+    "size": 13114
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/doc/anchors.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/doc/anchors.d.ts",
+    "size": 958
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/doc/anchors.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/doc/anchors.js",
+    "size": 2386
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/doc/applyReviver.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/doc/applyReviver.d.ts",
+    "size": 445
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/doc/applyReviver.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/doc/applyReviver.js",
+    "size": 1950
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/doc/createNode.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/doc/createNode.d.ts",
+    "size": 662
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/doc/createNode.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/doc/createNode.js",
+    "size": 3138
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/doc/directives.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/doc/directives.d.ts",
+    "size": 1910
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/doc/directives.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/doc/directives.js",
+    "size": 6237
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/errors.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/errors.d.ts",
+    "size": 1260
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/errors.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/errors.js",
+    "size": 2118
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/index.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/index.d.ts",
+    "size": 1394
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/index.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/index.js",
+    "size": 1769
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/log.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/log.d.ts",
+    "size": 226
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/log.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/log.js",
+    "size": 459
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/Alias.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/Alias.d.ts",
+    "size": 1077
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/Alias.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/Alias.js",
+    "size": 4042
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/Collection.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/Collection.d.ts",
+    "size": 2909
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/Collection.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/Collection.js",
+    "size": 5221
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/Node.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/Node.d.ts",
+    "size": 2538
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/Node.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/Node.js",
+    "size": 1382
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/Pair.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/Pair.d.ts",
+    "size": 1118
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/Pair.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/Pair.js",
+    "size": 1232
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/Scalar.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/Scalar.d.ts",
+    "size": 1792
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/Scalar.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/Scalar.js",
+    "size": 759
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/YAMLMap.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/YAMLMap.d.ts",
+    "size": 2376
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/YAMLMap.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/YAMLMap.js",
+    "size": 5105
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/YAMLSeq.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/YAMLSeq.d.ts",
+    "size": 2511
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/YAMLSeq.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/YAMLSeq.js",
+    "size": 3667
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/addPairToJSMap.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/addPairToJSMap.d.ts",
+    "size": 236
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/addPairToJSMap.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/addPairToJSMap.js",
+    "size": 2338
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/identity.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/identity.d.ts",
+    "size": 1379
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/identity.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/identity.js",
+    "size": 1794
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/toJS.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/toJS.d.ts",
+    "size": 986
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/nodes/toJS.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/nodes/toJS.js",
+    "size": 1292
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/options.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/options.d.ts",
+    "size": 11186
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/parse/cst-scalar.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/parse/cst-scalar.d.ts",
+    "size": 3528
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/parse/cst-scalar.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/parse/cst-scalar.js",
+    "size": 9382
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/parse/cst-stringify.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/parse/cst-stringify.d.ts",
+    "size": 310
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/parse/cst-stringify.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/parse/cst-stringify.js",
+    "size": 1799
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/parse/cst-visit.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/parse/cst-visit.d.ts",
+    "size": 2241
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/parse/cst-visit.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/parse/cst-visit.js",
+    "size": 3986
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/parse/cst.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/parse/cst.d.ts",
+    "size": 3500
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/parse/cst.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/parse/cst.js",
+    "size": 3242
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/parse/lexer.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/parse/lexer.d.ts",
+    "size": 2921
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/parse/lexer.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/parse/lexer.js",
+    "size": 24149
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/parse/line-counter.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/parse/line-counter.d.ts",
+    "size": 733
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/parse/line-counter.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/parse/line-counter.js",
+    "size": 1445
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/parse/parser.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/parse/parser.d.ts",
+    "size": 2534
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/parse/parser.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/parse/parser.js",
+    "size": 35551
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/public-api.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/public-api.d.ts",
+    "size": 2864
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/public-api.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/public-api.js",
+    "size": 4187
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/Schema.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/Schema.d.ts",
+    "size": 787
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/Schema.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/Schema.js",
+    "size": 1547
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/common/map.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/common/map.d.ts",
+    "size": 88
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/common/map.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/common/map.js",
+    "size": 483
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/common/null.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/common/null.d.ts",
+    "size": 108
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/common/null.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/common/null.js",
+    "size": 469
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/common/seq.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/common/seq.d.ts",
+    "size": 88
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/common/seq.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/common/seq.js",
+    "size": 484
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/common/string.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/common/string.d.ts",
+    "size": 83
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/common/string.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/common/string.js",
+    "size": 457
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/core/bool.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/core/bool.d.ts",
+    "size": 108
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/core/bool.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/core/bool.js",
+    "size": 635
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/core/float.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/core/float.d.ts",
+    "size": 166
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/core/float.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/core/float.js",
+    "size": 1510
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/core/int.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/core/int.d.ts",
+    "size": 160
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/core/int.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/core/int.js",
+    "size": 1407
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/core/schema.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/core/schema.d.ts",
+    "size": 98
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/core/schema.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/core/schema.js",
+    "size": 509
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/json-schema.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/json-schema.d.ts",
+    "size": 1998
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/json/schema.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/json/schema.d.ts",
+    "size": 118
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/json/schema.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/json/schema.js",
+    "size": 1900
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/tags.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/tags.d.ts",
+    "size": 1423
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/tags.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/tags.js",
+    "size": 3239
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/types.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/types.d.ts",
+    "size": 3763
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/binary.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/binary.d.ts",
+    "size": 83
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/binary.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/binary.js",
+    "size": 2800
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/bool.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/bool.d.ts",
+    "size": 174
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/bool.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/bool.js",
+    "size": 841
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/float.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/float.d.ts",
+    "size": 166
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/float.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/float.js",
+    "size": 1626
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/int.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/int.d.ts",
+    "size": 200
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/int.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/int.js",
+    "size": 2232
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/merge.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/merge.d.ts",
+    "size": 459
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/merge.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/merge.js",
+    "size": 2616
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/omap.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/omap.d.ts",
+    "size": 936
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/omap.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/omap.js",
+    "size": 2581
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/pairs.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/pairs.d.ts",
+    "size": 725
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/pairs.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/pairs.js",
+    "size": 2854
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/schema.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/schema.d.ts",
+    "size": 98
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/schema.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/schema.js",
+    "size": 912
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/set.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/set.d.ts",
+    "size": 1259
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/set.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/set.js",
+    "size": 3114
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/timestamp.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/timestamp.d.ts",
+    "size": 194
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/timestamp.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/schema/yaml-1.1/timestamp.js",
+    "size": 3775
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/stringify/foldFlowLines.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/stringify/foldFlowLines.d.ts",
+    "size": 1273
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/stringify/foldFlowLines.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/stringify/foldFlowLines.js",
+    "size": 4885
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/stringify/stringify.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/stringify/stringify.d.ts",
+    "size": 865
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/stringify/stringify.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/stringify/stringify.js",
+    "size": 4534
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyCollection.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyCollection.d.ts",
+    "size": 528
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyCollection.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyCollection.js",
+    "size": 5718
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyComment.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyComment.d.ts",
+    "size": 419
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyComment.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyComment.js",
+    "size": 801
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyDocument.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyDocument.d.ts",
+    "size": 260
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyDocument.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyDocument.js",
+    "size": 3104
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyNumber.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyNumber.d.ts",
+    "size": 147
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyNumber.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyNumber.js",
+    "size": 808
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyPair.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyPair.d.ts",
+    "size": 248
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyPair.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyPair.js",
+    "size": 5470
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyString.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyString.d.ts",
+    "size": 357
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyString.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/stringify/stringifyString.js",
+    "size": 13345
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/test-events.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/test-events.d.ts",
+    "size": 96
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/test-events.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/test-events.js",
+    "size": 4274
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/util.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/util.d.ts",
+    "size": 835
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/util.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/util.js",
+    "size": 1008
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/visit.d.ts",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/visit.d.ts",
+    "size": 5048
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/dist/visit.js",
+    "rel": "skill/lib/normify/node_modules/yaml/dist/visit.js",
+    "size": 9253
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/package.json",
+    "rel": "skill/lib/normify/node_modules/yaml/package.json",
+    "size": 3254
+  },
+  {
+    "path": "skill/lib/normify/node_modules/yaml/util.js",
+    "rel": "skill/lib/normify/node_modules/yaml/util.js",
+    "size": 80
+  },
+  {
+    "path": "skill/lib/normify/render.mjs",
+    "rel": "skill/lib/normify/render.mjs",
+    "size": 6325
+  },
+  {
     "path": "skill/manifest.json",
     "rel": "skill/manifest.json",
-    "size": 1261
+    "size": 1729
   },
   {
     "path": "skill/references/SPEC.md",
@@ -222,7 +1477,7 @@
   {
     "path": "skill/tests/selftest.py",
     "rel": "skill/tests/selftest.py",
-    "size": 20080
+    "size": 20954
   },
   {
     "path": "tools/cdp_record.py",
@@ -230,8 +1485,23 @@
     "size": 5055
   },
   {
+    "path": "tools/files.json",
+    "rel": "tools/files.json",
+    "size": 50659
+  },
+  {
     "path": "tools/make_demo_gif.py",
     "rel": "tools/make_demo_gif.py",
     "size": 4110
+  },
+  {
+    "path": "tools/push.bat",
+    "rel": "tools/push.bat",
+    "size": 518
+  },
+  {
+    "path": "tools/push.sh",
+    "rel": "tools/push.sh",
+    "size": 678
   }
 ]

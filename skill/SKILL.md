@@ -181,6 +181,24 @@ archinorm-myproj/
 - **深链**：`#module=<id>` 直接进某模块。图**默认打开即画**（不像 dsh-normify 必须带 hash 才渲染）。
 - **展开深度**：默认 **1 层**（当前模块 + 直接子级）；点节点再击/双击下钻。
 
+## 5.2 渲染路线：优先 normify 引擎，自动回退
+
+`render_html()` 是**双路线**的，按可用性自动选，互不影响：
+
+| 路线 | 触发条件 | 产物特征 |
+|---|---|---|
+| ① **normify 引擎**（首选） | 技能内置 `lib/normify/` 存在 **且** 找得到 node | `<meta name="generator" content="normify">`、数据脚本 `id="normify-data"`、品牌 `⬡ Normify`、工具栏含「大纲 / API / 导出 / 动效 / 配色」 |
+| ② 内置模板（回退） | 缺引擎或缺 node | 数据脚本 `id="payload"`、品牌 `archinorm`、工具栏「动效 / 配色 / 导出」三组 |
+
+- 引擎是 **dsh-normify 0.5.4** 原版（`lib/normify/engine/` 15 个 JS）+ 桥接脚本 `lib/normify/render.mjs`；
+  `node_modules/`（含 `yaml`，1.3M）**已随技能内置**，离线可用。
+- 桥接做**契约转换**（archinorm 与 dsh-normify 的 `tree.json` 有 5 处不同：`api_index` / `edges` /
+  `aggregate` / `tree` / `project`+`stats` 改名），并注入「无 hash 自动进首个模块」
+  （dsh-normify 默认 hash 为空时主区空白）。
+- node 查找顺序：`$WB_NODE` → `PATH` 里的 `node` → `~/.workbuddy/binaries/node/versions/*/bin/node`。
+- **自检对两条路线都断言**（`tests/selftest.py` 的 [J] 会自动识别 `normify-data` 或 `payload`），
+  本机两条路线均 **73/73**。
+
 ## 6. 命令速查（30 个）
 
 | 分组 | 命令 |

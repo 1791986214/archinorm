@@ -1,4 +1,37 @@
-## 1.3.2 — 2026-10-13
+# 更新日志
+
+## v1.3.3 — 2026-10-13
+
+### 修复：v1.3.2 遗留的三处问题
+
+**① `tests/selftest.py` 在 normify 路线下会崩。**
+[J] 段只认内置模板的 `<script id="payload">`，而 v1.3.2 起产物默认来自 normify 引擎
+（`id="normify-data"`）→ 断言失败，并在解析处抛 `IndexError`，自检**跑到第 47 项就中断**。
+改为**双路线识别**，统计字段按各自 schema 取值（`stats.module_count/api_count` ↔ `stats.modules/apis`）。
+**两条路线现在都是 73/73**（含把 `lib/normify` 删掉的纯回退路线）。
+
+**② `ENGINE_VERSION` 又漏改。**
+包版本已到 1.3.2，`parts/01` 里还是 `"1.3.1"` → 产物 `engine` 字段写旧号。
+已对齐。**成套改的清单再加一条：`VERSION` / `manifest.json` / `README` badge / `CHANGELOG` /
+`parts/01` `ENGINE_VERSION`。**
+
+**③ `.gitignore` 的 `dist/` 误伤 npm 包。**
+`yaml` 把编译产物放在 `dist/`，被仓库第 9 行 `dist/` 规则整个忽略（233 个文件）→
+内置引擎缺文件、normify 路线失效。已加精确反忽略（`db5864d` 已先行修复，本版沿用）。
+
+### 文档补齐
+
+- `README.md`：新增「渲染路线：优先 normify 引擎，自动回退」；`仓库结构` 补 `lib/normify/`；
+  `依赖` 段区分「数据层纯 Python」与「渲染层 Node + 内置 yaml」；版本 badge 补到 1.3.3（之前停在 1.3.1）。
+- `SKILL.md`：新增 §5.2 渲染路线（两条路线的产物特征、node 查找顺序、契约转换 5 处差异）。
+- `CHANGELOG.md`：把 1.3.2 段挪回 `# 更新日志` 标题之下（原先被插到了标题之上）。
+
+### 验收
+
+- `tests/selftest.py`：**normify 路线 73/73**、**回退路线 73/73**
+- 真浏览器：品牌 `⬡ Normify`、工具栏 7 钮、泳道带 + 依赖边带 ×1/×3 标签、产物 `engine` 实测 `archinorm 1.3.3`、**0 JS 报错**
+
+## v1.3.2 — 2026-10-13
 
 ### 渲染层对齐 normify
 - **渲染层换成 normify 引擎**：`render_html()` 优先调用内置的 `lib/normify/render.mjs`（Node），产物与 `normify.html` 视觉/功能完全一致（卡片节点 + 泳道带 + 5 套动效 + 5 种导出 + 动效/配色/导出切换按钮）。
@@ -12,7 +45,6 @@
 - 真浏览器（Playwright + chromium）：品牌 ⬡ Normify、6 边 6 箭头 3 泳道、7 个工具栏按钮、5 套动效/3 套配色、点「大纲」正常、逐帧确认动效在跑、**0 JS 报错**
 - 功能关键词与 `normify.html` 逐项相等（`data-motion` 46/46、`nmExport` 8/8、`nm-signal-scan` 3/3 等）
 
-# 更新日志
 
 ## v1.3.1 — 2026-10-13
 

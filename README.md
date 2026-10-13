@@ -3,7 +3,7 @@
 > 把代码仓库的架构写成**归一化的分形模块树**，渲染成**深色交互式框架图**。
 > 一个 Agent 技能，WorkBuddy / Claude Code / Codex 通用。**零第三方依赖**。
 
-[![version](https://img.shields.io/badge/version-1.3.1-blue.svg)](#)
+[![version](https://img.shields.io/badge/version-1.3.3-blue.svg)](#)
 [![python](https://img.shields.io/badge/python-%3E%3D3.9-blue.svg)](#)
 [![deps](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](#)
 [![license](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -123,6 +123,20 @@ OUT    call     数据库       更新订单状态
 
 组合起来就是 `?preset=ember&motion=archify#module=workbench.server` 这样一个可分享的链接。
 
+## 渲染路线：优先 normify 引擎，自动回退
+
+`render_html()` 是**双路线**的，按可用性自动选：
+
+| 路线 | 触发条件 | 产物特征 |
+|---|---|---|
+| ① **normify 引擎**（首选） | 技能内置 `skill/lib/normify/` 存在 **且** 找得到 node | `<meta name="generator" content="normify">`、数据脚本 `id="normify-data"`、品牌 `⬡ Normify`、工具栏「大纲 / API / 导出 / 动效 / 配色」 |
+| ② 内置模板（回退） | 缺引擎或缺 node | 数据脚本 `id="payload"`、品牌 `archinorm`、工具栏「动效 / 配色 / 导出」 |
+
+引擎是 **dsh-normify 0.5.4 原版**（`skill/lib/normify/engine/`），桥接脚本
+`skill/lib/normify/render.mjs` 负责 tree.json 的**契约转换**（`api_index` / `edges` / `aggregate` /
+`tree` / `project`+`stats` 五处差异），并注入「无 hash 自动进首个模块」—— dsh-normify 默认 hash 为空时主区空白。
+`node_modules/`（含 `yaml`）随包内置，**离线可用**；引擎异常 / 超时 / 产物过小都自动回退，**fail-safe**。
+
 ## 读懂一个真实仓库
 
 陌生仓库到手，推荐这条路径：
@@ -211,6 +225,7 @@ archinorm/
 │   ├── SKILL.md           技能说明（铁律 / 三条主流程 / 交付标注）
 │   ├── manifest.json      版本 + 更新源声明
 │   ├── bin/               引擎、启动器、更新器、构建脚本、源码分段
+│   ├── lib/normify/       内置 normify 渲染引擎（15 个 JS + 桥接 + node_modules）
 │   ├── examples/          archify 更新源样例 + 自动更新说明
 │   ├── references/SPEC.md 完整规范（数据模型 / 诊断码分级 / 31→30 映射）
 │   └── tests/selftest.py  73 项断言
@@ -238,7 +253,10 @@ python tools/make_demo_gif.py --frames <帧目录> --out docs/demo.gif --width 8
 
 ## 依赖
 
-**Python ≥ 3.9，无第三方库。** 生成架构图完全离线；只有自动更新需要联网。
+**数据层：Python ≥ 3.9，无第三方库。** 建树 / 校验 / 编译 / 检索全离线，只有自动更新需要联网。
+
+**渲染层：优先 Node + 内置 `yaml`**（都在 `skill/lib/normify/` 里随包分发，无需 `npm install`）。
+找不到 node 时自动回退到内置 Python 模板，**任何环境都能出图**。
 
 ## 致谢
 

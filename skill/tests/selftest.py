@@ -299,11 +299,19 @@ try:
     check("build 成功", pl.get("ok") is True, pl.get("errors"))
     check("HTML 产出", html.is_file() and html.stat().st_size > 3000)
     text = html.read_text(encoding="utf-8")
-    check("HTML 内嵌 payload", '<script id="payload" type="application/json">' in text)
+    # 渲染有两条路线，自检必须两条都能过（装了内置引擎的机器上产物来自 normify，
+    # 只认内置模板的标记会让 [J] 直接崩 —— 这正是它曾经 FAIL 的原因）：
+    #   ① normify 引擎（Node）：<meta name="generator" content="normify">
+    #      + <script type="application/json" id="normify-data">
+    #   ② 内置模板（纯 Python 回退）：<script id="payload" type="application/json">
+    PY_ROUTE = '<script id="payload" type="application/json">'
+    NF_ROUTE = 'type="application/json" id="normify-data">'
+    check("HTML 内嵌 payload", PY_ROUTE in text or NF_ROUTE in text)
     check("HTML 无未替换占位符", "__TITLE__" not in text and "__TREE_JSON__" not in text)
     check("HTML 深链支持", "#module=" in text)
-    m = text.split('type="application/json">', 1)[1].split("</script>", 1)[0]
-    m = m.replace("<\\/", "</")
+    raw = text.split(NF_ROUTE if NF_ROUTE in text else 'type="application/json">',
+                     1)[1].split("</script>", 1)[0]
+    m = raw.replace("<\\/", "</")
     try:
         tree = json.loads(m)
         ok_payload = True
@@ -312,10 +320,14 @@ try:
         tree = {"_err": str(exc)}
     check("内嵌 JSON 可解析", ok_payload, tree.get("_err"))
     if ok_payload:
+        # normify 载荷：顶层 stats{module_count, api_count}
+        # 内置模板载荷：顶层 stats{modules, apis}
+        st = tree.get("stats") or (tree.get("project") or {}).get("stats") or {}
+        n_mod = st.get("module_count", st.get("modules"))
+        n_api = st.get("api_count", st.get("apis"))
         check("payload 含全部模块", set(tree["modules"]) == {"demo", "demo.a", "demo.b"})
         check("payload 含渲染数据", "demo" in tree.get("layouts", {}))
-        check("统计数字正确", tree["stats"]["modules"] == 3
-              and tree["stats"]["apis"] == 1, tree["stats"])
+        check("统计数字正确", n_mod == 3 and n_api == 1, st)
 
     # layout 错误校验
     p = new_proj(tmp, "j2")
